@@ -14,6 +14,9 @@ Launches the test runner in the interactive watch mode.\
 ### `npm run build`
 Builds the app for production to the `build` folder.\
 
+### `npm test -- --coverage`
+To run the tests with coverage report
+
 ### Features and Technologies Used:
 
 1. Added Custom Hook for fetching the data from an api, in case api fails hook returns the respective error.
@@ -22,19 +25,38 @@ Builds the app for production to the `build` folder.\
 4. Added Search functionality to quickly search for any respository name.
 5. Added Loader from MUI to make the user experience better.
 6. Made the UI resposive using CSS media queries so that user can have better ui experience on every device.
-7. Done Unit testing using jest and react testing library to make sure functionality is working.
+7. Done Unit testingfor each component using jest and react testing library to make sure functionality is working.
 
 ### Some Screenshots of Screens
 
-<img width="960" alt="RepoList" src="https://github.com/user-attachments/assets/6828da98-4828-4670-9f25-29463ce363a5">
+### <img width="960" alt="RepoList" src="https://github.com/user-attachments/assets/6828da98-4828-4670-9f25-29463ce363a5">
 
 
 
-<img width="960" alt="RepoCard" src="https://github.com/user-attachments/assets/f66d1e6d-bf95-4300-be49-30293e3d8002">
 
 
 
-<img width="960" alt="Responsive" src="https://github.com/user-attachments/assets/e3c060a8-fe4b-45d7-b8d2-4c0de01a5d4e">
+
+
+
+
+
+
+
+### <img width="960" alt="RepoCard" src="https://github.com/user-attachments/assets/f66d1e6d-bf95-4300-be49-30293e3d8002">
+
+
+
+
+
+
+
+
+
+
+
+
+### <img width="960" alt="Responsive" src="https://github.com/user-attachments/assets/e3c060a8-fe4b-45d7-b8d2-4c0de01a5d4e">
 
 
 
@@ -45,7 +67,19 @@ Builds the app for production to the `build` folder.\
 
    
 
-    
+
+
+  ### <img width="960" alt="Search Repo" src="https://github.com/user-attachments/assets/888f49ca-be6b-4818-b4a8-3cfb4080aadf">
+
+
+
+
+
+
+
+
+
+
 
 
 
