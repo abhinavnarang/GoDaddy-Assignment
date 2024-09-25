@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { StyledRepo } from "./StyledRepo"; // Import the styled component
+import { StyledRepo } from "./StyledRepo";
 
 const Repo = (props) => {
   const { repo, handleSelect } = props;
@@ -12,8 +12,8 @@ const Repo = (props) => {
 
   return (
     <StyledRepo onClick={() => handleClick(repo.name)}>
-      <h1>{repo.name}</h1>
-      <p>Author: {repo.owner.login}</p>
+      <h1> {repo.name}</h1>
+      <p>Description: {repo.description ? repo.description : "- -"}</p>
     </StyledRepo>
   );
 };

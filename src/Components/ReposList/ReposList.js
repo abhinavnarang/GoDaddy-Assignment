@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Repo from "../Repo/Repo";
 import {
   RepoList,
@@ -8,35 +8,11 @@ import {
 } from "./StyledReposList";
 import CircularProgress from "@mui/material/CircularProgress";
 import { GITHUB_REPOS_API } from "../../Utils/constants";
+import useFetch from "../../Hooks/useFetch";
 
 const Repos = (props) => {
-  const [repos, setRepos] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const { data: repos, loading, error } = useFetch(GITHUB_REPOS_API);
   const [searchQuery, setSearchQuery] = useState("");
-
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(GITHUB_REPOS_API);
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await response.json();
-      setRepos(data);
-    } catch (error) {
-      setError(error.message);
-      return error;
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const filteredRepos = repos.filter((repo) =>
     repo.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -61,7 +37,7 @@ const Repos = (props) => {
             </SearchContainer>
           )}
           {error ? (
-            <div className="error">Error: {error}</div>
+            <div>Error: {error}</div>
           ) : (
             filteredRepos.length > 0 && (
               <RepoList>

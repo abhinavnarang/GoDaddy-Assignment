@@ -11,6 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const RepoCard = (props) => {
   const { repoCardDetails } = props;
+  console.log(repoCardDetails);
 
   const navigate = useNavigate();
 
@@ -51,14 +52,14 @@ const RepoCard = (props) => {
           <p>Forks: {repoCardDetails.forks}</p>
           <p>Open Issues: {repoCardDetails.open_issues}</p>
           <p>Watchers: {repoCardDetails.watchers}</p>
-          <p>
-            Date Created:{" "}
-            {new Date(repoCardDetails.created_at).toLocaleDateString()}
-          </p>
           <p>Default Branch: {repoCardDetails.default_branch}</p>
           <p>
+            Date Created:{" "}
+            {new Date(repoCardDetails.created_at).toLocaleDateString("en-US")}
+          </p>
+          <p>
             Last Commit:{" "}
-            {new Date(repoCardDetails.pushed_at).toLocaleDateString()}
+            {new Date(repoCardDetails.pushed_at).toLocaleDateString("en-US")}
           </p>
         </RepoDetails>
       </RepoInfo>
