@@ -45,4 +45,11 @@
   "devDependencies": {
     "msw": "^2.4.9"
   }
+    "jest": {
+   "collectCoverageFrom": [
+    "src/**/*.{js,jsx}",
+    "!src/index.js",
+    "!src/reportWebVitals.js"
+  ]
+}
 }
