@@ -44,7 +44,7 @@ Repositories List-
 
 
 
-Repository Card-
+Repository Details-
 
 ### <img width="960" alt="RepoCard" src="https://github.com/user-attachments/assets/f66d1e6d-bf95-4300-be49-30293e3d8002">
 
