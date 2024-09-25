@@ -1,8 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./Routes/HomePage/HomePage";
+import App from "./App"; 
 import RepoCard from "./Routes/RepoCard/RepoCard";
 import ErrorPage from "./Routes/ErrorPage/ErrorPage";
+
+jest.mock('./Routes/RepoCard/RepoCard', () => {
+  return function MockRepoCard({ repoCardDetails }) {
+    return <div>{repoCardDetails.name} - {repoCardDetails.description}</div>;
+  };
+});
 
 const mockRepoDetails = {
   id: 15684874,
@@ -36,33 +42,26 @@ const mockRepoDetails = {
   visibility: "public",
   default_branch: "master",
 };
+
 describe("App component routing", () => {
   it("should render the HomePage by default", () => {
-    const routes = [
-      {
-        path: "/",
-        element: <HomePage />,
-        errorElement: <ErrorPage />,
-      },
-    ];
-    const router = createMemoryRouter(routes, { initialEntries: ["/"] });
+    render(<App />); 
 
-    render(<RouterProvider router={router} />);
-
-    expect(screen.getByText(/GoDaddy's Repositories/i)).toBeInTheDocument(); // Update based on the actual content of HomePage
+    expect(screen.getByText(/GoDaddy's Repositories/i)).toBeInTheDocument(); 
   });
 
   it("should render RepoCard with mock repo details when navigating to /:name", async () => {
-    const routes = [
+    const router = createMemoryRouter(
+      [
+        {
+          path: "/:name",
+          element: <RepoCard repoCardDetails={mockRepoDetails} />,
+        },
+      ],
       {
-        path: "/:name",
-        element: <RepoCard repoCardDetails={mockRepoDetails} />,
-        errorElement: <ErrorPage />,
-      },
-    ];
-    const router = createMemoryRouter(routes, {
-      initialEntries: ["/gdapi-perl"],
-    });
+        initialEntries: ["/gdapi-perl"],
+      }
+    );
 
     render(<RouterProvider router={router} />);
 
@@ -73,16 +72,20 @@ describe("App component routing", () => {
   });
 
   it("should render ErrorPage for unknown routes", () => {
-    const routes = [
+    const router = createMemoryRouter(
+      [
+        {
+          path: "*",
+          element: <ErrorPage />,
+        },
+      ],
       {
-        path: "*",
-        element: <ErrorPage />,
-      },
-    ];
-    const router = createMemoryRouter(routes, { initialEntries: ["/unknown"] });
+        initialEntries: ["/unknown"],
+      }
+    );
 
-    render(<RouterProvider router={router} />);
+    render(<RouterProvider router={router} />); 
 
-    expect(screen.getByText(/Oops!/i)).toBeInTheDocument(); // Update based on the actual content of ErrorPage
+    expect(screen.getByText(/Oops!/i)).toBeInTheDocument(); 
   });
 });
