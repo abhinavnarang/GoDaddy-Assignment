@@ -44,7 +44,7 @@
   "proxy": "https://api.github.com",
   "devDependencies": {
     "msw": "^2.4.9"
-  }
+  },
     "jest": {
    "collectCoverageFrom": [
     "src/**/*.{js,jsx}",
