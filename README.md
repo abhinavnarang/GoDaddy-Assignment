@@ -44,7 +44,7 @@ Repo List-
 
 
 
-Repo Card
+Repo Card-
 
 ### <img width="960" alt="RepoCard" src="https://github.com/user-attachments/assets/f66d1e6d-bf95-4300-be49-30293e3d8002">
 
@@ -56,7 +56,7 @@ Repo Card
 
 
 
-Responsive UI
+Responsive UI-
 
 
 ### <img width="960" alt="Responsive" src="https://github.com/user-attachments/assets/e3c060a8-fe4b-45d7-b8d2-4c0de01a5d4e">
@@ -70,7 +70,7 @@ Responsive UI
 
    
 
-Search Repo
+Search Repo-
 
   ### <img width="960" alt="Search Repo" src="https://github.com/user-attachments/assets/888f49ca-be6b-4818-b4a8-3cfb4080aadf">
 
