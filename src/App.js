@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./Routes/HomePage/HomePage";
+import ErrorPage from "./Routes/ErrorPage/ErrorPage";
+import RepoCard from "./Routes/RepoCard/RepoCard";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [repoDetails, setRepoDetails] = useState({});
+  const handleSelect = (repoDetails) => {
+    setRepoDetails(repoDetails);
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomePage handleSelect={handleSelect} />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/:name",
+      element: <RepoCard repoCardDetails={repoDetails} />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: "*",
+      element: <ErrorPage />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;
