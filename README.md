@@ -29,7 +29,7 @@ To run the tests with coverage report
 
 ### Some Screenshots of Screens
 
-Repo List-
+Repositories List-
 
 ### <img width="960" alt="RepoList" src="https://github.com/user-attachments/assets/6828da98-4828-4670-9f25-29463ce363a5">
 
@@ -44,7 +44,7 @@ Repo List-
 
 
 
-Repo Card-
+Repository Card-
 
 ### <img width="960" alt="RepoCard" src="https://github.com/user-attachments/assets/f66d1e6d-bf95-4300-be49-30293e3d8002">
 
