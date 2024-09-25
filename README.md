@@ -19,13 +19,13 @@ To run the tests with coverage report
 
 ### Features and Technologies Used:
 
-1. Added Custom Hook for fetching the data from an api, in case api fails hook returns the respective error.
-2. Used createBrowserRouter and RouterProvider for creating routes rather than using Routes as this give more flexibilty and easily configurable.
+1. Added Custom Hook useFetch for fetching the data from an api, in case api fails useFetch returns the respective error.
+2. Used createBrowserRouter and RouterProvider for creating routes rather than using Routes as this give more flexibilty and is easily configurable.
 3. Implemented Error Page in case of any errors in Routing.
 4. Added Search functionality to quickly search for any respository name.
 5. Added Loader from MUI to make the user experience better.
-6. Made the UI resposive using CSS media queries so that user can have better ui experience on every device.
-7. Done Unit testingfor each component using jest and react testing library to make sure functionality is working.
+6. Made the UI resposive using CSS media queries so that user can have best ui experience on every device.
+7. Done Unit testing for each component using jest and react testing library to make sure functionality is working.
 
 ### Some Screenshots of Screens
 
@@ -70,7 +70,7 @@ Responsive UI-
 
    
 
-Search Repo-
+Search Repository-
 
   ### <img width="960" alt="Search Repo" src="https://github.com/user-attachments/assets/888f49ca-be6b-4818-b4a8-3cfb4080aadf">
 
